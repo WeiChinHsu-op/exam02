@@ -44,36 +44,36 @@ displacementx = np.arange(0,10,Ts)
 displacementy = np.arange(0,10,Ts)
 
 for i in range(100):
-    if(X[i]<0 && directionx==0):
+    if(X[i]<0 and directionx==0):
         if(i==0):
             displacementx[i] = 0.5*9.8*abs(X[i])*(0.01)*(0.01)*100
         else:
             displacementx[i] = displacementx[i-1]+0.5*9.8*abs(X[i])*(0.01)*(0.01)*100
-    elif (X[i]>0 && directionx==0):
+    elif (X[i]>0 and directionx==0):
         displacementx[i] = 0
         directionx = 1
-    elif (X[i]<0 && directionx==1):
+    elif (X[i]<0 and directionx==1):
         displacementx[i] = 1
         directionx = 0
-    elif (X[i]>0 && directionx==1):
+    elif (X[i]>0 and directionx==1):
         if(i==0):
             displacementx[i] = 0.5*9.8*abs(X[i])*(0.1)*(0.1)*100
         else:
             displacementx[i] = displacementx[i-1]+0.5*9.8*abs(X[i])*(0.1)*(0.1)*100
 
 for i in range(100):
-    if(Y[i]<0 && directiony==0):
+    if(Y[i]<0 and directiony==0):
         if(i==0):
             displacementy[i] = 0.5*9.8*abs(Y[i])*(0.01)*(0.01)*100
         else:
             displacementy[i] = displacementy[i-1]+0.5*9.8*abs(Y[i])*(0.1)*(0.1)*100
-    elif (Y[i]>0 && directiony==0):
+    elif (Y[i]>0 and directiony==0):
         displacementy[i] = 0
         directiony = 1
-    elif (Y[i]<0 && directiony==1):
+    elif (Y[i]<0 and directiony==1):
         displacementy[i] = 1
         directiony = 0
-    elif (Y[i]>0 && directiony==1):
+    elif (Y[i]>0 and directiony==1):
         if(i==0):
             displacementy[i] = 0.5*9.8*abs(Y[i])*(0.01)*(0.01)*100
         else:
